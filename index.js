@@ -2,6 +2,7 @@
 var playBtn = document.getElementById('play') ;
 var pauseBtn = document.getElementById('pause') ;
 var nextBtn = document.getElementById('next') ;
+var timer = document.getElementById('timer')
 var interval;
 
 let min = 0; 
@@ -20,7 +21,7 @@ const timeContDown = () => {
         sec--
     }
     console.log(`${timeFormat(min)} : ${timeFormat(sec)}`) 
-    
+    timer.textContent = `${timeFormat(min)}:${timeFormat(sec)}`;
 }
 
 const play = () => {
