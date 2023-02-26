@@ -29,10 +29,9 @@ const printNumber = () => {
 };
 
 const countIntervals = () => {
-    pause();
-    audioPlay();
     workInterval++;
     breakTime = !breakTime;
+    pause();
     sec = 0;
     return !breakTime ? min = 20 : workInterval % 3 === 0 && breakTime ? 
     min = 15 : min = 5;
@@ -43,8 +42,10 @@ const play = () => {
     
     interval = setInterval(() => {
         timeCountDown();
-        if(min === 0 && sec === 0)
+        if(min === 0 && sec === 0){
             countIntervals();
+            audioPlay();
+        }
         printNumber();
     },1000);
 }
@@ -55,10 +56,15 @@ const pause = () => {
     console.log(`Intervalo numero ${workInterval}, tiempo de descanso es ${breakTime} y el tiempo: 
     ${timeFormat(min)}:${timeFormat(sec)}`)
 }
-    
+
+const next = () => {
+    min, sec = 0;
+    countIntervals()
+    printNumber()
+}
     playBtn.addEventListener("click",play);
     pauseBtn.addEventListener("click",pause);
-    nextBtn.addEventListener("click",countIntervals);
+    nextBtn.addEventListener("click",next);
 
 const timeIntervals = () => {
 
