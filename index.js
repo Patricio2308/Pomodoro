@@ -15,15 +15,9 @@ const timeFormat = (num) => {
     return num < 10 ? `0${num}` : num
 }
 
-const timeContDown = () => {
-    if (sec === 0){
-        min--
-        sec = 59
-    } else if(min >= 0) {
-        sec--
-    }
-    console.log(`${timeFormat(min)} : ${timeFormat(sec)}`)
-    printNumber(); 
+const timeCountDown = () => {
+    console.log(`${timeFormat(min)}:${timeFormat(sec)}`)
+    return sec === 0 ? (min--, sec = 59) : sec--
 }
 
 const printNumber = () => {
@@ -36,26 +30,24 @@ const countIntervals = () => {
     breakTime = !breakTime;
     sec = 0;
     return !breakTime ? min = 20 : workInterval % 3 === 0 && breakTime ? 
-        min = 15 : min = 5;
+    min = 15 : min = 5;
 }
 
 const play = () => {
     playBtn.removeEventListener("click",play);
     
     interval = setInterval(() => {
-        timeContDown();
-        if(min === 0 && sec === 0){
-        countIntervals();
+        timeCountDown();
+        if(min === 0 && sec === 0)
+            countIntervals();
         printNumber();
-        }
     },1000);
 }
 
 const pause = () => {
     clearInterval(interval)
     playBtn.addEventListener("click",play);
-    console.log(`Intervalo numero ${workInterval}, 
-    tiempo de descanso ${breakTime} el tiempo 
+    console.log(`Intervalo numero ${workInterval}, tiempo de descanso es ${breakTime} y el tiempo: 
     ${timeFormat(min)}:${timeFormat(sec)}`)
 }
     
