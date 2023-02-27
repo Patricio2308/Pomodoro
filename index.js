@@ -25,7 +25,7 @@ const timeCountDown = () => {
 }
 
 const printNumber = () => {
-    timer.textContent = `${timeFormat(min)}:${timeFormat(sec)}`;
+    timer.innerHTML = `<p>${timeFormat(min)}:${timeFormat(sec)}</p>`;
 };
 
 const countIntervals = () => {
