@@ -10,9 +10,15 @@ let sec = 10;
 let workInterval = 0;
 let breakTime = false;
 
-function audioPlay(){
-    let sound = new Audio('./sounds/bell.wav');
-    sound.play()
+const sounds = {
+    play: "./sounds/bell.wav",
+    next: "./sounds/click.wav"
+}
+
+function audioPlay(currentSound){
+    let sound = new Audio(currentSound);
+    sound.volume = 0.4;
+    sound.play();
 }
 
 const timeFormat = (num) => {
@@ -44,7 +50,7 @@ const play = () => {
         timeCountDown();
         if(min === 0 && sec === 0){
             countIntervals();
-            audioPlay();
+            audioPlay(sounds.play);
         }
         printNumber();
     },1000);
@@ -58,9 +64,14 @@ const pause = () => {
 }
 
 const next = () => {
-    min, sec = 0;
-    countIntervals()
-    printNumber()
+    setTimeout(() => {
+        min, sec = 0;
+        countIntervals();
+        printNumber();
+        
+        audioPlay(sounds.next);
+    }
+    ,400);
 }
     playBtn.addEventListener("click",play);
     pauseBtn.addEventListener("click",pause);
