@@ -7,7 +7,7 @@ var interval;
 
 let min = 0; 
 let sec = 10;
-let workInterval = 0;
+let workInterval = 1;
 let breakTime = false;
 
 const sounds = {
@@ -39,7 +39,7 @@ const countIntervals = () => {
     breakTime = !breakTime;
     pause();
     sec = 0;
-    return !breakTime ? min = 20 : workInterval % 3 === 0 && breakTime ? 
+    return !breakTime ? min = 20 : workInterval % 6 === 0 && breakTime ? 
     min = 15 : min = 5;
 }
 
@@ -68,7 +68,6 @@ const next = () => {
         min, sec = 0;
         countIntervals();
         printNumber();
-        
         audioPlay(sounds.next);
     }
     ,400);
