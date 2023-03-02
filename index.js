@@ -36,13 +36,13 @@ const printNumber = () => {
 };
 
 const changeColor = () =>{
-    let color;
+    let color = "panelWork";
     if(!breakTime){
         color = "panelWork";
     }
-    if(workInterval % 6 !== 0) {
+    else if(workInterval % 6 !== 0) {
         color = "panelBreak";
-    } else {
+    } else{
         color = "panelBreak2";
     }
     body.style.backgroundColor = `var(--${color})`;
