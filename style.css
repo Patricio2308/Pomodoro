@@ -1,9 +1,10 @@
 :root {
     /* Colors */
     --bgColor: #080808;
-    --panelBreak: #ad579fd7;
-    --panelBreak2: #647CB3;
-    --panelWork: #547980;
+    --panelBreak: #b945a6e1;
+    /* --panelBreak: #ad579fd7; */
+    --panelBreak2: #5d77b4;
+    --panelWork: #4b7780;
     --textColor: #f0f8ff;
     /* Effects */
     --transitionTime: 0.3s;
@@ -21,7 +22,7 @@ body {
 
 #container {
     width: 100%;
-    height: 80vh;
+    height: 75vh;
     transition: var(--transitionTime);
     background-color: var(--panelWork);
     position: relative;
@@ -31,7 +32,7 @@ body {
     width: 100%;
     height: 50%;
     top: 5%;
-    font-size: 7em;
+    font-size: 13rem;
     font-family: sans-serif;
     color: var(--textColor);
     position: absolute;
@@ -39,7 +40,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-
 
 .buttons {
     position: absolute;
@@ -60,7 +60,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 1px 3px;
+    box-shadow: 1px 4px 4px;
 }
 
 button svg {

@@ -1,4 +1,4 @@
-
+var title = document.getElementById("textTitle")
 var body = document.getElementById('container') ;
 var playBtn = document.getElementById('play') ;
 var pauseBtn = document.getElementById('pause') ;
@@ -27,11 +27,11 @@ const timeFormat = (num) => {
 }
 
 const timeCountDown = () => {
-    console.log(`${timeFormat(min)}:${timeFormat(sec)}`)
     return sec === 0 ? (min--, sec = 59) : sec--
 }
 
 const printNumber = () => {
+    title.textContent = `${timeFormat(min)}:${timeFormat(sec)}`;
     timer.innerHTML = `<p>${timeFormat(min)}:${timeFormat(sec)}</p>`;
 };
 
@@ -77,8 +77,6 @@ const play = () => {
 const pause = () => {
     clearInterval(interval);
     playBtn.addEventListener("click",play);
-    console.log(`Intervalo numero ${workInterval}, tiempo de descanso es ${breakTime} y el tiempo: 
-    ${timeFormat(min)}:${timeFormat(sec)}`)
 }
 
 const next = () => {
