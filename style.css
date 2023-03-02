@@ -1,8 +1,8 @@
 :root {
-    --bgcolor: #080808;
-    --bgcolor2: #45ada8;
-    --panel: #547980;
-    --panel2: #9de0ad;
+    --bgColor: #080808;
+    --panelBreak: #ad579fd7;
+    --panelBreak2: #647CB3;
+    --panelWork: #547980;
     --textColor: #f0f8ff;
 }
 
@@ -10,7 +10,7 @@
 
 body {
     height: 100vh;
-    background-color: var(--bgcolor);
+    background-color: var(--bgColor);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,8 +19,7 @@ body {
 #container {
     width: 100%;
     height: 80vh;
-    background-color: var(--panel);
-    
+    background-color: var(--panelWork);
     position: relative;
 }
 
@@ -30,7 +29,7 @@ body {
     top: 5%;
     font-size: 7em;
     font-family: sans-serif;
-    color: #f0f8ff;
+    color: var(--textColor);
     position: absolute;
     display: flex;
     align-items: center;
@@ -50,15 +49,18 @@ body {
 }
 
 button {
-    border: 2px solid;
+    border: 1.2px solid;  
     border-radius: 100%;
     width: 100px;
     height: 100px;
-    background-color: aliceblue;
+    background-color: var(--textColor);
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 1px 3px;
 }
+
 button svg {
     width: 50px;
+    fill: var(--panelWork);
 }

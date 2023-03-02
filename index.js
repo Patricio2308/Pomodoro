@@ -1,4 +1,5 @@
 
+var body = document.getElementById('container') ;
 var playBtn = document.getElementById('play') ;
 var pauseBtn = document.getElementById('pause') ;
 var nextBtn = document.getElementById('next') ;
@@ -34,10 +35,27 @@ const printNumber = () => {
     timer.innerHTML = `<p>${timeFormat(min)}:${timeFormat(sec)}</p>`;
 };
 
+const changeColor = () =>{
+    let color;
+    if(!breakTime){
+        color = "panelWork";
+    }
+    if(workInterval % 6 !== 0) {
+        color = "panelBreak";
+    } else {
+        color = "panelBreak2";
+    }
+    body.style.backgroundColor = `var(--${color})`;
+    document.querySelectorAll('.buttons svg').forEach(element => {
+        element.style.fill = `var(--${color})`;       
+    });
+};
+
 const countIntervals = () => {
     workInterval++;
     breakTime = !breakTime;
     pause();
+    changeColor();
     sec = 0;
     return !breakTime ? min = 20 : workInterval % 6 === 0 && breakTime ? 
     min = 15 : min = 5;
