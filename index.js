@@ -7,7 +7,7 @@ var timer = document.getElementById('timer')
 var interval;
 
 let min = 20; 
-let sec = 00;
+let sec = 0;
 let workInterval = 1;
 let breakTime = false;
 
