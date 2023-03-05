@@ -6,8 +6,8 @@ var nextBtn = document.getElementById('next') ;
 var timer = document.getElementById('timer')
 var interval;
 
-let min = 0; 
-let sec = 10;
+let min = 20; 
+let sec = 00;
 let workInterval = 1;
 let breakTime = false;
 
@@ -60,7 +60,7 @@ const countIntervals = () => {
     return !breakTime ? min = 20 : workInterval % 6 === 0 && breakTime ? 
     min = 15 : min = 5;
 }
-
+/* Buttons */
 const play = () => {
     playBtn.removeEventListener("click",play);
     
@@ -88,10 +88,7 @@ const next = () => {
     }
     ,400);
 }
-    playBtn.addEventListener("click",play);
-    pauseBtn.addEventListener("click",pause);
-    nextBtn.addEventListener("click",next);
-
-const timeIntervals = () => {
-
-}
+/* Events */
+playBtn.addEventListener("click",play);
+pauseBtn.addEventListener("click",pause);
+nextBtn.addEventListener("click",next);

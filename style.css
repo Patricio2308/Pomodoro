@@ -3,7 +3,7 @@
     --bgColor: #080808;
     --panelBreak: #b945a6e1;
     /* --panelBreak: #ad579fd7; */
-    --panelBreak2: #5d77b4;
+    --panelBreak2: #4965a5;
     --panelWork: #4b7780;
     --textColor: #f0f8ff;
     /* Effects */
@@ -32,7 +32,7 @@ body {
     width: 100%;
     height: 50%;
     top: 5%;
-    font-size: 13rem;
+    font-size: 10em;
     font-family: sans-serif;
     color: var(--textColor);
     position: absolute;
@@ -41,7 +41,7 @@ body {
     justify-content: center;
 }
 
-@media screen and (min-width: 320px) {   
+@media screen and (max-width: 540px) {   
     #timer{font-size: 7rem;}
 }
 
