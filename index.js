@@ -80,11 +80,13 @@ const pause = () => {
 }
 
 const next = () => {
+    nextBtn.removeEventListener("click",next);
     setTimeout(() => {
         min, sec = 0;
         countIntervals();
         printNumber();
         audioPlay(sounds.next);
+        nextBtn.addEventListener("click",next);
     }
     ,400);
 }

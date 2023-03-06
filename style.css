@@ -32,7 +32,7 @@ body {
     width: 100%;
     height: 50%;
     top: 5%;
-    font-size: 10em;
+    font-size: 7em;
     font-family: sans-serif;
     color: var(--textColor);
     position: absolute;
@@ -41,8 +41,8 @@ body {
     justify-content: center;
 }
 
-@media screen and (max-width: 540px) {   
-    #timer{font-size: 7rem;}
+@media screen and (min-width: 540px) {   
+    #timer{font-size: 10rem;}
 }
 
 .buttons {
@@ -52,7 +52,10 @@ body {
     align-items: center;
     bottom: 5%;
     width: 100%;
-    height: 30%;
+    height: auto;
+}
+@media screen and (min-height: 400px) {   
+    .buttons{height: 30%;}
 }
 
 button {
