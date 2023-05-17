@@ -110,6 +110,16 @@ body {
     font-size: 2rem;
 }
 
+.cancelModal svg{
+    height: 3rem;
+    width: 100%;
+}
+
+.cancelModal:hover path{
+    stroke: #f0f8ff;
+    transition: 0.15s ease-in;
+}
+
 .modal .content {
     display: flex;
     align-items: center;
@@ -117,7 +127,7 @@ body {
     justify-content: center;
     gap: 2rem;
     font-size: 1.3rem;
-    height: 75%;
+    height: 70%;
 }
 
 .modal input {
@@ -138,14 +148,14 @@ body {
     font-size: large;
     width: 10rem;
     height: 2.8rem;
-    border: thin solid #000;
+    border: thin solid #000000cc;
     box-shadow: 3px 3px;
     border-radius: 1rem;
 }
 .modal button:active {
     transform: translateY(3px);
     box-shadow: 0px 0px;
-    transition: 0.2s ease-out;
+    transition: 0.1s ease-out;
 }
 
 
