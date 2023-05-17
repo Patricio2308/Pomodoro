@@ -18,8 +18,20 @@ body {
     height: 100vh;
     background-color: var(--bgColor);
     display: flex;
+    align-items: end;
     justify-content: center;
-    align-items: center;
+    flex-direction: column;
+}
+
+.option {
+    width: 3rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: end;
+}
+
+.option svg:hover path{
+    stroke: rgb(209, 198, 203);
 }
 
 #container {

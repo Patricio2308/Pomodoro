@@ -8,7 +8,7 @@ window.onload = function () {
     var timer = document.getElementById('timer')
     var interval;
 
-    let min = 20;
+    let min = 25;
     let sec = 0;
     let workInterval = 1;
     let breakTime = false;
