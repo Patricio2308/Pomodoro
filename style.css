@@ -5,8 +5,12 @@
     --panelBreak2: #4965a5;
     --panelWork: #4b7780;
     --textColor: #f0f8ff;
+    --modalBg: #b9b7b7;
     /* Effects */
     --transitionTime: 0.3s;
+    /* Modal */
+    --modalHeight: 30rem;
+    --modalWidth: 50rem;
 }
 
 * {
@@ -24,8 +28,8 @@ body {
 }
 
 .option {
-    width: 3rem;
-    margin: 1rem;
+    width: 4rem;
+    margin: -1rem 1rem 1rem;
     display: flex;
     justify-content: end;
 }
@@ -85,11 +89,48 @@ button svg {
     fill: var(--panelWork);
 }
 
+.modal {
+    height: var(--modalHeight);
+    width: var(--modalWidth);
+    max-width: 30rem;
+    max-height: 20rem;
+    background-color: var(--modalBg);
+    position: absolute;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 3px 3px 10px rgba(36, 36, 36, 0.678);
+}
+
+.modal header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+}
+
+.modal .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    height: 80%;
+}
+
+.modal input{
+    margin-left: 1rem;
+    transform: scale(1.5);
+}
+
 
 @media screen and (min-width: 540px) {
     #timer {
         font-size: 10rem;
     }
+   /*  .modal {
+        width: 100%;
+    } */
 }
 
 @media screen and (min-height: 400px) {
@@ -100,4 +141,5 @@ button svg {
     #container {
         height: 75vh;
     }
+
 }
