@@ -27,15 +27,16 @@ body {
     flex-direction: column;
 }
 
-.option {
+.options {
     width: 4rem;
     margin: -1rem 1rem 1rem;
     display: flex;
     justify-content: end;
 }
 
-.option svg:hover path{
-    stroke: rgb(209, 198, 203);
+.options svg:hover path{
+    stroke: rgb(228, 217, 222);
+    transition: all 0.5s;
 }
 
 #container {
@@ -88,7 +89,7 @@ body {
     transition: var(--transitionTime);
     fill: var(--panelWork);
 }
-
+/* Modales */
 .modal {
     height: var(--modalHeight);
     width: var(--modalWidth);
@@ -97,9 +98,10 @@ body {
     background-color: var(--modalBg);
     position: absolute;
     border-radius: 1.5rem;
-    padding: 2rem;
+    padding: 1rem 2rem 2rem;
     top: 50%;
     left: 50%;
+    border: thin solid;
     transform: translate(-50%,-50%);
     box-shadow: 3px 3px  0px rgba(0, 0, 0, 0.678);
 }
@@ -117,7 +119,7 @@ body {
 
 .cancelModal:hover path{
     stroke: #f0f8ff;
-    transition: 0.15s ease-in;
+    transition: 0.1s ease-in;
 }
 
 .modal .content {
@@ -152,6 +154,12 @@ body {
     box-shadow: 3px 3px;
     border-radius: 1rem;
 }
+
+.modal button:hover {
+    background-color: rgb(253, 232, 204);
+    transition: 0.5s ease;
+}
+
 .modal button:active {
     transform: translateY(3px);
     box-shadow: 0px 0px;

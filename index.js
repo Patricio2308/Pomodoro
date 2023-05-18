@@ -9,6 +9,7 @@ window.onload = function () {
     var nextBtn = document.getElementById('next');
     var timer = document.getElementById('timer');
     var xBtn = document.querySelector(".cancelModal");
+    var optionBtn = document.querySelector(".options");
     var interval;
 
     let min = 25;
@@ -98,15 +99,19 @@ window.onload = function () {
             , 400);
     }
     /* Modales */
-    function modalOff() {
+    function modalDisplay() {
         var modal = document.querySelector(".modal");
-        modal.style.display = "none";
+        if (modal.style.display == "none"){
+            modal.style.display = "block";
+        } else
+            modal.style.display = "none";
     }
 
     /* Events */
     playBtn.addEventListener("click", play);
     pauseBtn.addEventListener("click", pause);
     nextBtn.addEventListener("click", next);
-    xBtn.addEventListener("click", modalOff);
+    xBtn.addEventListener("click", modalDisplay);
+    optionBtn.addEventListener("click", modalDisplay);
 
 };
