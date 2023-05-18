@@ -9,12 +9,18 @@ window.onload = function () {
     var nextBtn = document.getElementById('next');
     var timer = document.getElementById('timer');
     var xBtn = document.querySelector(".cancelModal");
+    var cancelBtn = document.getElementById("cancelOptionsBtn");
+    var saveBtn = document.getElementById("saveOptionsBtn");
     var optionBtn = document.querySelector(".options");
     var interval;
 
     let min = 25;
+    let pomoMin = 25;
+    let restMin = 5;
+    let longRestMin = 15;
     let sec = 0;
     let workInterval = 1;
+    let automaticPlay = false;
     let breakTime = false;
 
     const sounds = {
@@ -58,14 +64,18 @@ window.onload = function () {
         });
     };
 
+    const timeAllocation = () => {
+        sec = 0;
+        return !breakTime ? min = pomoMin : workInterval % 6 === 0 && breakTime ?
+            min = longRestMin : min = restMin;
+    }
+
     const countIntervals = () => {
         workInterval++;
         breakTime = !breakTime;
         pause();
         changeColor();
-        sec = 0;
-        return !breakTime ? min = 20 : workInterval % 6 === 0 && breakTime ?
-            min = 15 : min = 5;
+        return timeAllocation();
     }
     /* Buttons */
     const play = () => {
@@ -76,6 +86,9 @@ window.onload = function () {
             if (min === 0 && sec === 0) {
                 countIntervals();
                 audioPlay(sounds.play);
+                if(automaticPlay){
+                    play();
+                }
             }
             printNumber();
         }, 1000);
@@ -107,11 +120,24 @@ window.onload = function () {
             modal.style.display = "none";
     }
 
+    function saveOptions() {
+        pomoMin = document.getElementById("pomodoroTIme").value;
+        restMin = document.getElementById("restTime").value;
+        longRestMin = document.getElementById("longRestTime").value;
+        let autoValue = document.getElementById("autoPlay").checked;
+        if (autoValue) { automaticPlay = true } else automaticPlay = false;
+        timeAllocation();
+        printNumber();
+        modalDisplay();
+    }
+
     /* Events */
     playBtn.addEventListener("click", play);
     pauseBtn.addEventListener("click", pause);
     nextBtn.addEventListener("click", next);
     xBtn.addEventListener("click", modalDisplay);
+    cancelBtn.addEventListener("click", modalDisplay);
     optionBtn.addEventListener("click", modalDisplay);
+    saveBtn.addEventListener("click", saveOptions);
 
 };

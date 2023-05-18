@@ -48,20 +48,24 @@
         <section class="content">
             <label for="pomodoroTIme">
                 <span>Pomodoro Time</span> 
-                <input type="number" id="pomodoroTIme" value="20">
+                <input type="number" id="pomodoroTIme" value="25">
             </label>
             <label for="restTime">
                 <span>Rest Time</span>
-                <input type="number" id="restTime" value="05">
+                <input type="number" id="restTime" value="5">
+            </label>
+            <label for="longRestTime">
+                <span>Rest Time</span>
+                <input type="number" id="longRestTime" value="15">
             </label>
             <label for="autoPlay">
                 <span>Auto Play</span>
-                <input type="checkbox" id="autoPlay">
+                <input type="checkbox" id="autoPlay" value="off">
             </label>
         </section>
         <section class="footer">
-            <button>Save</button>
-            <button>Cancel</button>
+            <button id="saveOptionsBtn">Save</button>
+            <button id="cancelOptionsBtn">Cancel</button>
         </section>
     </section>
     
