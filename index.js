@@ -26,7 +26,6 @@ window.onload = function () {
     const sounds = {
         play: "./sounds/bell.wav",
         next: "./sounds/click.wav"
-
     }
 
     function audioPlay(currentSound) {
@@ -135,9 +134,9 @@ window.onload = function () {
     playBtn.addEventListener("click", play);
     pauseBtn.addEventListener("click", pause);
     nextBtn.addEventListener("click", next);
+    optionBtn.addEventListener("click", modalDisplay);
     xBtn.addEventListener("click", modalDisplay);
     cancelBtn.addEventListener("click", modalDisplay);
-    optionBtn.addEventListener("click", modalDisplay);
     saveBtn.addEventListener("click", saveOptions);
 
 };

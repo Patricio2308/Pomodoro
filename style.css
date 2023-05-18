@@ -30,13 +30,23 @@ body {
 .options {
     width: 4rem;
     margin: -1rem 1rem 1rem;
+    background-color: #08080800;
+    border: none;
     display: flex;
     justify-content: end;
 }
 
+.options path{
+    stroke: #807f7fe5;
+}
+
 .options svg:hover path{
     stroke: rgb(228, 217, 222);
-    transition: all 0.5s;
+}
+
+.options svg:hover{
+    transition: ease 0.5s;
+    transform: rotate(180deg);
 }
 
 #container {
