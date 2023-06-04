@@ -117,7 +117,7 @@ body {
     transform: translate(-50%,-50%);
     box-shadow: 3px 3px  0px rgba(0, 0, 0, 0.678);
     font-weight: 500;
-    font-family: 'Nunito', sans-serif;
+    font-family: sans-serif;
 }
 
 .modal header {

@@ -37,10 +37,12 @@ window.onload = function () {
 
     /* Carga los valores iniciales desde la localStorage*/
     const loadOptions = () => {
-        pomoMin = parseInt(localStorage.getItem('Pmin'));
-        restMin = parseInt(localStorage.getItem('Rmin'));
-        longRestMin = parseInt(localStorage.getItem('LRmin'));
-        automaticPlay = localStorage.getItem('AutoPlay') == 'true';
+        if (localStorage.getItem('Pmin') !== null){
+            pomoMin = parseInt(localStorage.getItem('Pmin'));
+            restMin = parseInt(localStorage.getItem('Rmin'));
+            longRestMin = parseInt(localStorage.getItem('LRmin'));
+            automaticPlay = localStorage.getItem('AutoPlay') == 'true';
+        }
         setInitialsValueOption("pomodoroTIme", "restTime", "longRestTime", "autoPlay");
         document.getElementById("realTime").textContent = `${timeFormat(pomoMin)}:${timeFormat(sec)}`;
     }
@@ -159,7 +161,6 @@ window.onload = function () {
         restMin = chargeValueOption("restTime");
         longRestMin = chargeValueOption("longRestTime");
         automaticPlay = document.getElementById("autoPlay").checked;
-        console.log(document.getElementById("autoPlay").checked)
 
         timeAllocation();
         printNumber();
