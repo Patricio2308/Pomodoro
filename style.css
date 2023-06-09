@@ -171,8 +171,7 @@ body {
 }
 
 .modal button:hover {
-    background-color: #9491a0;
-    /* color: var(--textColor); */
+    background-color: #ceccd6;
     transition: 0.3s ease;
 }
 
