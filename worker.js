@@ -1,4 +1,5 @@
 let seg;
+let interval;
 
 function onMessage(e) {
     seg = e.data
