@@ -21,6 +21,7 @@ window.onload = function () {
     let workInterval = 1;
     let automaticPlay = false;
     let breakTime = false;
+    const worker = new window.Worker('worker.js');
     
 
     const timeFormat = (num) => {
@@ -103,12 +104,12 @@ window.onload = function () {
     /* Buttons */
     const play = () => {
         playBtn.removeEventListener("click", play);
+        worker.postMessage((min * 60) + sec)
 
         interval = setInterval(() => {
             timeCountDown();
             if (min === 0 && sec === 0) {
                 countIntervals();
-                audioPlay(sounds.play);
                 if(automaticPlay){
                     play();
                 }
@@ -117,9 +118,14 @@ window.onload = function () {
         }, 1000);
     }
 
+    worker.addEventListener("message", function (e) {
+        if (e.data)
+            audioPlay(sounds.play);
+    })
 
     const pause = () => {
         clearInterval(interval);
+        worker.postMessage(-1);
         playBtn.addEventListener("click", play);
     }
 
@@ -143,16 +149,7 @@ window.onload = function () {
             modal.style.display = "none";
     }
 
-    /* const setNewValueOption = (id1,id2,id3,id4) => {
-        document.getElementById(id1).value = pomoMin;
-        document.getElementById(id2).value = restMin;
-        document.getElementById(id3).value = longRestMin;
-        document.getElementById(id4).checked = automaticPlay;
-        console.log("seteado")
-    }
- */
     const chargeValueOption = (id) => {
-        console.log("cargado "+ id)
         return document.getElementById(id).value
     }
 
