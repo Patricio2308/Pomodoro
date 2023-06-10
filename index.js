@@ -52,8 +52,8 @@ window.onload = function () {
     let min = pomoMin;
     
     const sounds = {
-        play: "./sounds/bell.wav",
-        next: "./sounds/click.wav"
+        play: document.getElementById(`bellSound`).src,
+        next: document.getElementById(`nextSound`).src
     };
 
     function audioPlay(currentSound) {
@@ -104,14 +104,17 @@ window.onload = function () {
     /* Buttons */
     const play = () => {
         playBtn.removeEventListener("click", play);
-        worker.postMessage((min * 60) + sec)
+       /*  worker.postMessage((min * 60) + sec) */
 
         interval = setInterval(() => {
             timeCountDown();
-            if (min === 0 && sec === 0) {
+            if (min == 0 && sec == 0) {
                 countIntervals();
+                audioPlay(sounds.play);
                 if(automaticPlay){
                     play();
+                } else {
+                    clearInterval(interval);
                 }
             }
             printNumber();
@@ -120,7 +123,8 @@ window.onload = function () {
 
     worker.addEventListener("message", function (e) {
         if (e.data)
-            audioPlay(sounds.play);
+        console.log("sonido");
+           /*  audioPlay(sounds.play); */
     })
 
     const pause = () => {
